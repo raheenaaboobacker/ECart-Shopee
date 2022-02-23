@@ -1,0 +1,32 @@
+<!-- include header -->
+<%-include('include/_header')%>
+    <!-- include header -->
+    <div class="row">
+        <div class="col-sm-6">
+            <img width="600px" src="\images\<%=demo.img%>" alt="">
+        </div>
+        <div class="col-sm-5">
+            <br><br><br><br>
+            <h3>
+                <%=demo.name%>
+            </h3>
+
+            <h4>price:
+                <%=demo.price%>
+            </h4>
+            <h4>Quantity:</h4>
+            <form action="/products/find/<%=demo._id%>" method="post">
+                <input type="text" name="quantity">
+                <h3>Total amount:</h3>
+                <h2 id="total"></h2>
+
+                <button type="submit">add to cart</button></form>
+
+
+
+        </div>
+    </div>
+
+    </body>
+
+    </html>

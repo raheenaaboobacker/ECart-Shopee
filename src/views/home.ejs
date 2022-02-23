@@ -1,0 +1,45 @@
+<!-- include header -->
+<%-include('include/_header')%>
+    <!-- include header -->
+    <br>
+
+    <h4 style="text-align: center ;">PRODUCTS
+    </h4>
+    <a href="/products/cartshow">
+        <i id="cart" class="fa fa-shopping-cart" aria-hidden="true">  </i>
+    </a>
+
+
+
+    <div class="row">
+        <!-- <div class="offset-1 "></div> -->
+
+        <%for(var i=0;i < fruits.length;i++){%>
+
+            <div class="card " style="width: 18rem; ">
+                <img class="card__image " src="\images\<%=fruits[i].img%>" alt=" Card image cap ">
+                <div class="card-body ">
+
+                    <h4 name="name">
+                        <%=fruits[i].name%>
+                    </h4><br> RS:
+                    <%=fruits[i].price%> <br>
+                        <!-- <h5>
+                                Quantity: <input type="text " name="quantity"><br>
+
+                            </h5> -->
+
+                        <a href="/products/buy/<%=fruits[i]._id%>">
+                            <button>SHOW</button>
+                        </a>
+
+                </div>
+
+
+            </div>
+            <%}%>
+    </div>
+
+    </body>
+
+    </html>

@@ -1,0 +1,43 @@
+<!-- include header -->
+<%-include('include/_adminheader')%>
+    <!-- include header -->
+    <br>
+
+    <h4 style="text-align: center;">PRODUCTS
+    </h4>
+
+
+
+
+    <div class="row ">
+        <!-- <div class="offset-1 "></div> -->
+
+        <%for(var i=0;i < fruits.length;i++){%>
+
+            <div class="card " style="width: 18rem; ">
+                <img class="card__image " src="\images\<%=fruits[i].img%>" alt=" Card image cap ">
+                <div class="card-body ">
+
+                    <h4 name="name">
+                        <%=fruits[i].name%>
+                    </h4><br> RS:
+                    <%=fruits[i].price%> <br>
+                        <!-- <h5>
+                                Quantity: <input type="text " name="quantity"><br>
+
+                            </h5> -->
+
+                        <form action="/admin/edit/<%=fruits[i]._id%>"><button>edit</button></form>
+                        <form action="/admin/delete/<%=fruits[i]._id%>" method="post">
+                            <button type="submit">delete Item</button> </form>
+
+                </div>
+
+
+            </div>
+            <%}%>
+    </div>
+
+    </body>
+
+    </html>

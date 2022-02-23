@@ -1,0 +1,41 @@
+<%-include('include/_header')%>
+    <% var total=0%>
+        <%for(var i=0;i<data.length;i++){%>
+            <%total+=parseInt(data[i].amount)%>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="\images\<%=data[i].prdimg%>" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%=data[i].prdname%>
+                                </h4>
+                                <h5>unit price:
+                                    <%=data[i].prdprice%>
+                                </h5>
+                                <span><h5>
+                        quantity:  <%=data[i].qt%>
+                    </h5>
+                    </span> total amont:
+                                <%=data[i].amount%>
+
+                                    <form action="/products/prdDelete/<%=data[i]._id%>" method="post">
+                                        <button type="submit">delete</button> </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                    <span>
+                <h1>Grand total:
+                   <%=total%>
+                </h1>
+                </span>
+
+                    </body>
+
+                    </html>
